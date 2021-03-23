@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -8,45 +8,42 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 export class SignUpComponent implements OnInit {
 
-  //signUp= new FormGroup({});
+  signUpForm = new FormGroup({});
   submitted = false;
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-    /*this.signUp = this.formBuilder.group({
+  ngOnInit(): void { 
+    this.signUpForm = this.formBuilder.group({
       firstname:['', Validators.required],
       surname: ['', Validators.required],
-      email: ['', Validators.required],
-      confirmEmail: ['', Validators.required,Validators.email],
-      password: ['', Validators.required, Validators.email],
-      confirmPassword: ['', Validators.required]},
-      {
-        //validator: MustMatch('password', 'confirmPassword')
-    });*/
+      email: ['', [Validators.required, Validators.email]],
+      confirmEmail: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
+      recaptchaReactive: ['', [Validators.required]]},
+     
+     );
   }
+  get f() { return this.signUpForm.controls; }
   resolved(captchaResponse: string) {
     console.log(`Resolved response token: ${captchaResponse}`);
    
   }
-  /*
+  
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.signUp.invalid) {
+    if (this.signUpForm.invalid) {
         return;
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signUp.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signUpForm.value, null, 4));
 }
 
 onReset() {
     this.submitted = false;
-    this.signUp.reset();
-}*/
-
-  
+    this.signUpForm.reset();
 }
-
-
+}
