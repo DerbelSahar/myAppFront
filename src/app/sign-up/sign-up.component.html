@@ -1,0 +1,68 @@
+
+<div class="container d-flex justify-content-center align-items-center"
+      style="min-height: 100vh">
+      	<form class="border shadow p-3 rounded" 
+      	      method="post" 
+      	      style="width: 450px;">
+      	      <h1 class="text-center p-3">LOGIN</h1>
+			  
+		  <div class="mb-3">
+		    <label for="firstname" 
+		           class="form-label">First name</label>
+		    <input type="text" 
+		           class="form-control" 
+		           name="firstname" 
+		           id="firstname">
+		  </div>
+          <div class="mb-3">
+		    <label for="surname" 
+		           class="form-label">Surname</label>
+		    <input type="text" 
+		           class="form-control" 
+		           name="surname" 
+		           id="surname">
+		  </div>
+		  <div class="mb-3">
+		    <label for="email" 
+		           class="form-label">Email adress</label>
+		    <input type="email" 
+		           name="email" 
+		           class="form-control" 
+		           id="email">
+		  </div>
+          <div class="mb-3">
+		    <label for="confirmEmail" 
+		           class="form-label">Confirm Email adress</label>
+		    <input type="email" 
+		           name="confirmEmail" 
+		           class="form-control" 
+		           id="confirmEmail">
+		  </div>
+		  <div class="mb-3">
+		    <label for="password" 
+		           class="form-label">Password</label>
+		    <input type="password" 
+		           name="password" 
+		           class="form-control" 
+		           id="password">
+		  </div>
+
+          <div class="mb-3">
+		    <label for="confirmPassword" 
+		           class="form-label">Repeat your password</label>
+		    <input type="password" 
+		           name="confirmPassword" 
+		           class="form-control" 
+		           id="confirmPassword">
+		  </div>
+          <div>
+            <!--
+            <re-captcha (resolved)="resolved($event)" 
+                        formControlName="recaptchaReactive" 
+                        siteKey="6LckOIsaAAAAAI-s5pMq8e4kljgotP3t-_wWfSSZ">  
+            </re-captcha>-->
+          </div>
+		  <button type="submit" 
+		          class="btn btn-primary">LOGIN</button>
+		</form>
+      </div>
